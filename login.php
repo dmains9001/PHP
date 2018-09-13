@@ -25,7 +25,6 @@ while ($row = $result->fetch_assoc()) {
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr"
-<html>
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -41,8 +40,16 @@ if (isset($_POST['logout'])){
   <body>
 
   <a href="register.php">Register</a>
+
+  <?php
+  if( isset($_SESSION['username']) ) {
+    echo "<a href=\"upload.php\"> | Upload</a>";
+  }
+  ?>
+
   <a href="upload.php"> | Upload</a>
   <br />
+
 
   <form method="post" action="",>
   <input type="text" name="username" placeholder="Username"> <br />
