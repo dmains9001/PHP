@@ -3,13 +3,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   require('dbconnection.php');
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $password = password_hash($password, PASSWORD_BCRYPT)
+  $password = password_hash($password, PASSWORD_BCRYPT);
   $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
   $conn->query($sql);
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -19,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   <body>
     <form method="post" action="">
       <input type="text" name="username"> <br>
-      <input type="password" name="password"> <br>
+      <input type="password" name="password"><br>
       <input type="submit">
     </form>
   </body>
