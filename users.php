@@ -33,6 +33,7 @@ $conn->close();
         <th>User ID</th>
         <th>Username</th>
         <th>Password Hash</th>
+        <th>Actions</th>
       </tr>
 
       <?php
@@ -43,6 +44,12 @@ while($row = $result->fetch_assoc()) {
     echo "<td>" . $row['userid'] . "</td>";
     echo "<td>" . $row['username'] . "</td>";
     echo "<td>" . $row['password'] . "</td>";
+    echo "<td>
+          <form action=\"\" method=\"post\">
+            <input name = \"ID\" type=\"hidden\" value=\"" . $row['userid'] . "\">
+            <input type=\"submit\" value=\"delete\">
+          </form>
+          </td>";
   echo "</tr>";
 }
       ?>
