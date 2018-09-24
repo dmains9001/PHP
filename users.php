@@ -12,8 +12,8 @@ if (!isset($_SESSION['username'])){
 //Bring in database fann_get_total_connections
 require('dbconnection.php');
 
-if (isset($_POST['ID']) && isset ($_POST['doom'])) {
-  $sql = "DELETE FROM users WHERE userid = " . $_POST['ID'];
+if (isset($_POST['id']) && isset ($_POST['doom'])) {
+  $sql = "DELETE FROM users WHERE userid = " . $_POST['id'];
   $result = $conn->query($sql);
 }
 
@@ -53,8 +53,16 @@ while($row = $result->fetch_assoc()) {
     echo "<td>" . $row['username'] . "</td>";
     echo "<td>" . $row['password'] . "</td>";
     echo "<td>
+      <form action=\"edituser.php\" method=\"get\"
+        <input type=\"hidden\" name=\"id\" value=\"$row['userid'] . "\">
+        <input type=\"submit\" value=\"edit\" name=\"edit\">
+      </form>
+      </td>";
+
+
+    echo "<td>
           <form action=\"\" method=\"post\">
-            <input name=\"ID\" type=\"hidden\" value=\"" . $row['userid'] . "\">
+            <input name=\"id\" type=\"hidden\" value=\"" . $row['userid'] . "\">
             <input type=\"submit\" value=\"delete\" name=\"doom\">
           </form>
           </td>";
