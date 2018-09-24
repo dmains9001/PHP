@@ -3,12 +3,20 @@
 if (!isset($_SESSION)){
   session_start();
 }
+
 //If user is not logged in, send them to login page
 if (!isset($_SESSION['username'])){
   header('Location: login.php');
 }
+
 //Bring in database fann_get_total_connections
 require('dbconnection.php');
+
+if (isset($_POST['id']) && isset ($_POST['doom'])) {
+  $sql = "DELETE FROM users WHERE userid = " . $_POST['userid'];
+  $result = $conn->query($sql);
+}
+
 //Create the SQL query
 $sql = "SELECT * from users";
 
@@ -47,7 +55,7 @@ while($row = $result->fetch_assoc()) {
     echo "<td>
           <form action=\"\" method=\"post\">
             <input name = \"ID\" type=\"hidden\" value=\"" . $row['userid'] . "\">
-            <input type=\"submit\" value=\"delete\">
+            <input type=\"submit\" value=\"delete\" name=\"doom\">
           </form>
           </td>";
   echo "</tr>";
