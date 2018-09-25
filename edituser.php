@@ -16,9 +16,10 @@ if (isset($_GET['id']) && $_GET['edit']=="edit") {
   echo "<form action=\"\" method=\"post\">";
 
   while ($row = $result->fetch_assoc()) {
-    echo "<input type=\"text\" disabled value=\"$row['userid']\">";
+    echo "<input type=\"text\" disabled value=\"" . $row['userid'] . "\">";
   }
 
 } else {
   echo "Something went wrong.";
 }
+?>
