@@ -18,9 +18,9 @@ if (isset($_GET['id']) && $_GET['edit']=="edit") {
   while ($row = $result->fetch_assoc()) {
     echo "<input name=\"userid\" type=\"text\" disabled value=\"" . $row['userid'] . "\">";
     echo "<br />";
-    echo "<input name=\"username\" type=\"text\" disabled value=\"" . $row['username'] . "\">";
+    echo "<input name=\"username\" type=\"text\"  value=\"" . $row['username'] . "\">";
     echo "<br />";
-    echo "<input name=\"password\" type=\"text\" disabled value=\"" . $row['password'] . "\">";
+    echo "<input name=\"password\" type=\"text\"  value=\"" . $row['password'] . "\">";
     echo "<input type=\"submit\" name=\"submit\" value=\"change\">";
     echo "<br />";
   }
