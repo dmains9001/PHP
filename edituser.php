@@ -5,6 +5,8 @@ if (!isset($_SESSION)){
 
 if (!isset($_SESSION['username'])){
   header('Location: login.php');
+
+  // require('navbar.php'); < ---- Adds in the navbar
 }
 
 if (isset($_GET['id']) && $_GET['edit']=="edit") {
