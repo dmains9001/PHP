@@ -7,6 +7,8 @@ if (!isset($_SESSION['username'])){
   header('Location: login.php');
 }
 
+include('navbar.php');
+
 var_dump($_POST['upload']);
 echo "<hr />";
 var_dump($_FILES['upload']);
