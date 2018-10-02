@@ -12,6 +12,8 @@ if (!isset($_SESSION['username'])){
 //Bring in database fann_get_total_connections
 require('dbconnection.php');
 
+include('navbar.php');
+
 if (isset($_POST['id']) && isset ($_POST['doom'])) {
   $sql = "DELETE FROM users WHERE userid = " . $_POST['id'];
   $result = $conn->query($sql);
