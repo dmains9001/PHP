@@ -17,4 +17,3 @@ echo (basename($_SERVER['PHP_SELF']) == "register.php") ? "<a href='users.php'> 
 <br />
 echo (basename($_SERVER['PHP_SELF']) == "login.php") ? "<a href='users.php'> <strong>Login</strong></a>":
 "<a href='login.php'>Login</a>";
-<br />
