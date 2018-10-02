@@ -1,7 +1,7 @@
-echo "<br />"";
-echo "<a href=users.php>Users</a>";
-echo "<a href=upload.php>Upload</a>";
-echo "<a href=register.php>Register</a>";
+"<br />"";
+"<a href=users.php>Users</a>";
+"<a href=upload.php>Upload</a>";
+"<a href=register.php>Register</a>";
 echo "<a href=login.php>Login</a>";
 
 
