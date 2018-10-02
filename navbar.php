@@ -2,3 +2,6 @@
 <a href=upload.php>Upload</a> |
 <a href=register.php>Register</a> |
 <a href=login.php>Login</a> |
+
+<?php if($_SERVER["PHP_SELF"]=='users.php' {<strong>Users</strong>});
+?>
