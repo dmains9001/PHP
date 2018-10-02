@@ -8,6 +8,7 @@ if (!isset($_SESSION['username'])){
 }
 
 include('navbar.php');
+<br>
 
 var_dump($_POST['upload']);
 echo "<hr />";
