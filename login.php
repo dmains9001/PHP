@@ -6,8 +6,6 @@ if (isset($_POST['username'])){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-include 'navbar.php'
-
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
 $sql = "SELECT username, password FROM users where username = '$username'";
 
@@ -21,6 +19,8 @@ if ($username == $row['username'] && password_verify($password, $row['password']
     } //closes if statement
   } //closes while loop
 } //closes POST condition
+
+include('navbar.php');
 
 ?>
 
