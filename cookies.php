@@ -14,7 +14,7 @@ $cookie_value = "bob";
   </head>
   <body>
     <?php
-      if (isset)($_COOKIE['user']))
+      if(isset($_COOKIE['user']))
       {
         echo "You have been here before.";
       }
