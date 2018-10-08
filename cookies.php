@@ -25,18 +25,20 @@ $cookie_value = "bob";
         //setcookie($cookie_name, $cookie_value, time() + 86400 * 30, "/");
         setcookie($cookie_name, $cookie_value, time() + (60), "/");
       }
-      //if(isset($_COOKIE['lastvisit']))
-      //{
-      //$last = $_COOKIE['lastvisit'];
-      //}
-      //$year = 31536000 + time();
 
-      //setcookie($lastvisit, time (), $year) ;
-      //if (isset ($last))
-      //{
-      //  $change = time () - $last;
-      //  if ( $change > 86400)
-      //  echo "You last visited on ". date("m/d/y",$last);
+      if(isset($_COOKIE['lastvisit']))
+      {
+      $last = $_COOKIE['lastvisit'];
+      }
+      $year = 31536000 + time();
+
+      setcookie($lastvisit, time (), $year) ;
+      if (isset($lastvisit))
+      {
+        $change = time () - $last;
+        if ( $change > 86400)
+        echo "You last visited on ". date("m/d/y",$last);
+      }
 
     ?>
   </body>
