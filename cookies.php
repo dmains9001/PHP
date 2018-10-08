@@ -1,4 +1,7 @@
 <?php
+$cookie_name = "lastvisit";
+$cookie_value = "visit";
+
 if(isset($_COOKIE['lastvisit']))
 {
 $visit = $_COOKIE['lastvisit'];
