@@ -9,11 +9,9 @@ if (isset($_COOKIE)['lastvisit']))
   setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
 }
 else {
-  {
     $notification = "You haven't been here recently";
     $lastvisit = $_COOKIE['lastvisit'];
     setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-  }
 }
 //setcookie($cookie_name, $cookie_value, time() + 86400 * 30, "/");
 //86400 seconds = 1 day
