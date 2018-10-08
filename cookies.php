@@ -29,7 +29,7 @@ $cookie_value = "bob";
       {
       $last = $_COOKIE['lastvisit']; }
       $year = 31536000 + time() ;
-      
+
       setcookie($lastvisit, time (), $year) ;
       if (isset ($last))
       {
