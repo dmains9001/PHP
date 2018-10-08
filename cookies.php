@@ -26,13 +26,13 @@ $cookie_value = "bob";
         setcookie($cookie_name, $cookie_value, time() + (60), "/");
       }
 
-      if(isset($_COOKIE['lastvisit']))
+      if(isset($_COOKIE['user']))
       {
-      $last = $_COOKIE['lastvisit'];
+      $last = $_COOKIE['user'];
       }
       $year = 31536000 + time();
 
-      setcookie($bob, time (), $year) ;
+      setcookie($bob, time(), $year) ;
       if (isset($bob))
       {
         $change = time () - $last;
