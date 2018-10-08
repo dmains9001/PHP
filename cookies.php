@@ -32,8 +32,8 @@ $cookie_value = "bob";
       }
       $year = 31536000 + time();
 
-      setcookie($lastvisit, time (), $year) ;
-      if (isset($lastvisit))
+      setcookie($bob, time (), $year) ;
+      if (isset($bob))
       {
         $change = time () - $last;
         if ( $change > 86400)
