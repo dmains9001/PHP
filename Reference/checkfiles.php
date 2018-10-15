@@ -9,7 +9,6 @@ echo "<pre>$pwd</pre>";
 ?>
 
 
-
 <?php
 $folder = file_exists("test");
 
