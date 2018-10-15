@@ -12,7 +12,7 @@ $testfolder = '/var/www/html/damian/PHP/test';
         }
 }
   else {
-    echo "The folder $testfolder is lost to the void; we shall bring it to be. Umbasa.";
+    echo "The folder $testfolder is lost to the void; we shall bring it to be.";
     $create = exec('mkdir test');
 }
 
