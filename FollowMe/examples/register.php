@@ -1,3 +1,8 @@
+<?php
+include('registration.php');
+require('dbconnection.php');
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
