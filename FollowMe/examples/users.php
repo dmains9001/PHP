@@ -40,7 +40,7 @@ $conn->close();
 while($row = $result->fetch_assoc()) {
   echo "<tr>";
     echo "<td>" . $row['userid'] . "</td>";
-    echo "<td>" . $row['username'] . "</td>";
+    echo "<td>" . $row['email'] . "</td>";
     echo "<td>" . $row['password'] . "</td>";
     echo "<td>
       <form action=\"edituser.php\" method=\"get\">
