@@ -7,11 +7,6 @@ if (!isset($_SESSION)){
 //Bring in database fann_get_total_connections
 require('dbconnection.php');
 
-if (isset($_POST['id']) && isset ($_POST['doom'])) {
-  $sql = "DELETE FROM fm_users WHERE userid = " . $_POST['id'];
-  $result = $conn->query($sql);
-}
-
 //Create the SQL query
 $sql = "SELECT * from fm_users";
 
