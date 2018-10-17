@@ -29,7 +29,7 @@ $conn->close();
     <table>
       <tr>
         <th>User ID</th>
-        <th>Username</th>
+        <th>Email</th>
         <th>Password Hash</th>
         <th>Actions</th>
       </tr>
