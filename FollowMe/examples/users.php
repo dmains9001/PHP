@@ -4,23 +4,16 @@ if (!isset($_SESSION)){
   session_start();
 }
 
-//If user is not logged in, send them to login page
-if (!isset($_SESSION['username'])){
-  header('Location: login.php');
-}
-
 //Bring in database fann_get_total_connections
 require('dbconnection.php');
 
-include('navbar.php');
-
 if (isset($_POST['id']) && isset ($_POST['doom'])) {
-  $sql = "DELETE FROM users WHERE userid = " . $_POST['id'];
+  $sql = "DELETE FROM fm_users WHERE userid = " . $_POST['id'];
   $result = $conn->query($sql);
 }
 
 //Create the SQL query
-$sql = "SELECT * from users";
+$sql = "SELECT * from fm_users";
 
 //Execute the SQL query
 $result = $conn->query($sql);

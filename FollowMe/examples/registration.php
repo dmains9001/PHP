@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   //Grab POST data - Password will be hashed so no need to sanitize
   $password = $_POST['password'];
   $password = password_hash($password, PASSWORD_BCRYPT);
-  $sql = "INSERT INTO users (username,password) VALUES ('$username','$password')";
+  $sql = "INSERT INTO fm_users (username,password) VALUES ('$username','$password')";
   $conn->query($sql);
 }
 ?>
