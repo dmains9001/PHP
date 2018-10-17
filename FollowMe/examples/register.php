@@ -1,6 +1,5 @@
 <?php
 include('registration.php');
-require('dbconnection.php');
 ?>
 
 <!doctype html>
@@ -116,6 +115,12 @@ require('dbconnection.php');
         </div>
     </div>
 </body>
+
+<?php
+
+
+
+?>
 
 <!-- Core JS Files -->
 <script src="../assets/js/jquery-3.2.1.js" type="text/javascript"></script>
