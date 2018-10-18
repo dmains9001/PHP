@@ -120,6 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 									</a>
                                 </div>
                                 <form class="register-form">
+                                  <form method="post" action="">
                                     <label>Email</label>
                                     <input type="text" class="form-control" placeholder="Email">
 
