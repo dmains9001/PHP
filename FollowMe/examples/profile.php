@@ -1,3 +1,10 @@
+<?php
+//Start session
+//Uses $_SESSION['email']; to display email in nav.
+//Modify fm_users to include avatar_url | Load it to $_SESSION avatar_url
+//Going to need to create $_SESSION first_name / last_name
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,9 +44,19 @@
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
 	            <ul class="navbar-nav ml-auto">
+
 	                <li class="nav-item">
 	                    <a href="login.php" class="nav-link">Login</a>
 	                </li>
+
+									<li class="nav-item">
+	                    <a href="#" class="nav-link">
+												<?php
+													echo $_SESSION['email'];
+												?>
+											</a>
+	                </li>
+
 	            </ul>
 	        </div>
 		</div>
@@ -53,10 +70,10 @@
             <div class="container">
                 <div class="owner">
                     <div class="avatar">
-                        <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        <img src=<?php echo $_SESSION['avatar_url']; ?> alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?> ]<br /></h4>
 						<h6 class="description">Music Producer</h6>
                     </div>
                 </div>
