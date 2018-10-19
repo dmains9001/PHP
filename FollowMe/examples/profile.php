@@ -1,7 +1,7 @@
 <?php
 //Start session
 //Uses $_SESSION['email']; to display email in nav.
-//Modify fm_users to include avatar_url | Load it to $_SESSION avatar_url
+//Modify fm_users to include image_url | Load it to $_SESSION image_url
 //Modify fm_users to include $_SESSION first_name / last_name
 //Modify fm_users to include $_SESSION['title']
 //Modify fm_users to include $_SESSION['description']
