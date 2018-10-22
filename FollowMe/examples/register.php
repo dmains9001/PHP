@@ -121,9 +121,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 </div>
                                   <form method="post" action="">
                                     <label>Email</label>
+                                    <name=Email>
                                     <input type="text" class="form-control" placeholder="Email">
 
                                     <label>Password</label>
+                                    <name=password>
                                     <input type="password" class="form-control" placeholder="Password">
                                     <button class="btn btn-danger btn-block btn-round">Register</button>
                                 </form>
