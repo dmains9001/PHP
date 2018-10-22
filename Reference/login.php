@@ -7,7 +7,7 @@ if (isset($_POST['username'])){
   $password = $_POST['password'];
 
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
-$sql = "SELECT username, password FROM users where username = '$username'";
+$sql = "SELECT email, password FROM fm_users where email = '$email'";
 
   //Execute the SQL and return array to $result
   $result = $conn->query($sql);
