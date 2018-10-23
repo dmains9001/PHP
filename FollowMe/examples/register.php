@@ -13,11 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $maketable = $conn->query($sql);
   }
   $email = $_POST['email'];
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-      $email = trim($email);
-        $email = str_replace("/","",$email);
-        $email = str_replace("\\","",$email);
-            $email = preg_replace("/\s+/","", $email); //Removes tabs from username
+  $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
 
   //Grab POST data - Password will be hashed so no need to sanitize
   $password = $_POST['password'];
