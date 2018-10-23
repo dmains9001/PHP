@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                                 </div>
                                   <form class="register-form" action="" method="post">
                                     <label>Email</label>
-                                    <input type="text" name="Email" class="form-control" placeholder="Email">
+                                    <input type="text" name="email" class="form-control" placeholder="email">
 
                                     <label>Password</label>
                                     <name=password>
