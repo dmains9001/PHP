@@ -119,10 +119,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 										<i class="fa fa-twitter"></i>
 									</a>
                                 </div>
-                                  <form method="post" action="">
+                                  <form class="register-form" action="" method="post">
                                     <label>Email</label>
-                                    <name=Email>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" name="Email" class="form-control" placeholder="Email">
 
                                     <label>Password</label>
                                     <name=password>
