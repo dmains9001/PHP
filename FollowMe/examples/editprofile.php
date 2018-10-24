@@ -27,6 +27,10 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
 
+		}
+	}
+}
+
 ?>
 
 <!doctype html>

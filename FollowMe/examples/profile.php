@@ -20,6 +20,7 @@ $sql = "SELECT email, password FROM fm_users where email = '$email'";
 
   //Execute the SQL and return array to $result
   $result = $conn->query($sql);
+
   }
 
 
