@@ -1,5 +1,31 @@
 <?php
 //If no session is open, start.
+//Add name attributes to form elements
+//Set default values for each form element from $_SESSION
+//Update submitted values to database
+//Update submitted values to $_SESSION
+?>
+
+<?php
+session_start();
+require('dbconnection.php');
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+	$sql = "SELECT email, password FROM fm_users where email = '$email'";
+
+	  $result = $conn->query($sql);
+
+	while ($row = $result->fetch_assoc()) {
+if ($email == $row['email'] && password_verify($password, $row['password']) ) {
+			$_SESSION['email'] = $email;
+			$_SESSION['image_url'] = $row['image_url'];
+			$_SESSION['first_name'] = $row['first_name'];
+			$_SESSION['last_name'] = $row['last_name'];
+			$_SESSION['title'] = $row['title'];
+			$_SESSION['description'] = $row['description'];
 
 ?>
 

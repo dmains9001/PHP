@@ -12,7 +12,7 @@ $sql = "SELECT email, password FROM fm_users where email = '$email'";
   //Execute the SQL and return array to $result
   $result = $conn->query($sql);
 
-  //Extraction the returned query information
+  //Extraction of the returned query information
   while ($row = $result->fetch_assoc()) {
 if ($email == $row['email'] && password_verify($password, $row['password']) ) {
       $_SESSION['email'] = $email;
