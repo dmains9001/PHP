@@ -17,11 +17,11 @@ $sql = "SELECT email, password FROM fm_users where email = '$email'";
   while ($row = $result->fetch_assoc()) {
 if ($email == $row['email'] && password_verify($password, $row['password']) ) {
       $_SESSION['email'] = $email;
-    //  $_SESSION['image_url'] = $row['image_url'];
-    //  $_SESSION['first_name'] = $row['first_name'];
-    //  $_SESSION['last_name'] = $row['last_name'];
-    //  $_SESSION['title'] = $row['title'];
-    //  $_SESSION['description'] = $row['description'];
+      $_SESSION['image_url'] = $row['image_url'];
+      $_SESSION['firstname'] = $row['first_name'];
+      $_SESSION['lastname'] = $row['last_name'];
+      $_SESSION['title'] = $row['title'];
+      $_SESSION['description'] = $row['description'];
 
     } //closes if statement
   } //closes while loop
