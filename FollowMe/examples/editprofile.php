@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 																	<span class="input-group-addon">
 																	<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input value="<?php echo $_SESSION['first_name']; ?> " type="text" name="firstname" class="form-control" placeholder="First Name">
+																	<input value="<?php echo $_SESSION['first_name']; ?> " type="text" name="firstname" class="form-control" placeholder="<?php echo $_SESSION['first_name']; ?> ">
 																</div>
 														</div>
 
@@ -175,10 +175,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 </body>
 
 <?php
-echo "Logged in as: " . $_SESSION['email'];
-echo "Your first name is: " . $_SESSION['firstname'];
-echo "Your last name is: " . $_SESSION['lastname'];
-echo "Your title is: " . $_SESSION['title'];
+//Echoes the session variables for testing purposes.
+//echo "Logged in as: " . $_SESSION['email'];
+//echo "Your first name is: " . $_SESSION['firstname'];
+//echo "Your last name is: " . $_SESSION['lastname'];
+//echo "Your title is: " . $_SESSION['title'];
 ?>
 
 <!-- Core JS Files -->
