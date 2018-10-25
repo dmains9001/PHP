@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-  $sql = "UPDATE fm_users SET (first_name = '$firstname',last_name = '$lastname', title = '$title', description = '$description') where email = '$email'";
-  
+  $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' where email = '$email'";
+
   if (mysqli_query($conn, $sql)) {
     echo "Record updated successfully";
 } else {
