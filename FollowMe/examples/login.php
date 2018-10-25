@@ -119,9 +119,9 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 										<i class="fa fa-twitter"></i>
 									</a>
                                 </div>
-                                <form class="register-form">
+                                <form class="register-form" action="" method="post">
                                     <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" name="email" class="form-control" placeholder="Email">
 
                                     <label>Password</label>
                                     <input type="password" class="form-control" placeholder="Password">
