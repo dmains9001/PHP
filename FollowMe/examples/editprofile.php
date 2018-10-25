@@ -174,6 +174,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     </footer>
 </body>
 
+<?php
+echo "Logged in as: " . $_SESSION['email'];
+echo "Your first name is: " . $_SESSION['firstname'];
+echo "Your last name is: " . $_SESSION['lastname'];
+echo "Your title is: " . $_SESSION['title'];
+?>
+
 <!-- Core JS Files -->
 <script src="../assets/js/jquery-3.2.1.js" type="text/javascript"></script>
 <script src="../assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
