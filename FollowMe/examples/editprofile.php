@@ -26,11 +26,19 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
-
-//  $sql="UPDATE fm_users SET first_name='$_POST['firstname']', last_name='$_POST['lastname']', title='$_POST['title']', description='$_POST['description']';
-
     } //closes IF statement
   } //closes WHILE loop
+
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+
+  $sql="UPDATE fm_users SET first_name='$_POST['firstname']',
+    last_name='$_POST['lastname']',
+    title='$_POST['title']',
+    description='$_POST['description']'";
+        $conn->query($sql)
 } //closes POST condition
 
 ?>
@@ -112,7 +120,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																	<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" name="firstname" class="form-control" placeholder="firstname">
+																	<input type="text" name="firstname" class="form-control" placeholder="First Name">
 																</div>
 														</div>
 
@@ -122,7 +130,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																		<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" name="lastname" class="form-control" placeholder="lastname">
+																	<input type="text" name="lastname" class="form-control" placeholder="Last Name">
 																</div>
 														</div>
 
@@ -133,7 +141,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 													<span class="input-group-addon">
 														<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input type="text" name="title" class="form-control" placeholder="title">
+													<input type="text" name="title" class="form-control" placeholder="Title">
 												</div>
 
 												<label>Description</label>
