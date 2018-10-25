@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-	$sql = "SELECT email, password FROM fm_users where email = '$email'";
+	$sql = "SELECT email, password, first_name, last_name, title, description FROM fm_users where email = '$email'";
 
 	  $result = $conn->query($sql);
 
