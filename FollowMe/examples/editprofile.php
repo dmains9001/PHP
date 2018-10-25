@@ -19,12 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' where email = '$email'";
 
-  if (mysqli_query($conn, $sql)) {
-    echo "Record updated successfully";
-} else {
-    echo "Error updating record: " . mysqli_error($conn);
-}
-
+//  Code for testing purposes
+//   if (mysqli_query($conn, $sql)) {
+//     echo "Record updated successfully";
+// } else {
+//     echo "Error updating record: " . mysqli_error($conn);
+// }
+$conn->query($sql)
   if ($conn) {
     $_SESSION['firstname'] = $_POST['firstname'];
     $_SESSION['lastname'] = $_POST['lastname'];
