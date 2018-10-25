@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-  $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
+  $sql= "UPDATE fm_users SET (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
   $conn->query($sql);
 
   if ($conn) {
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_SESSION['lastname'] = $_POST['lastname'];
     $_SESSION['title'] = $_POST['title'];
     $_SESSION['description'] = $_POST['description'];
-    
+
   } //closes sql query IF statement
 } //closes POST condition
 
