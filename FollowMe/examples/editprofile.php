@@ -27,9 +27,11 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
 
-		}
-	}
-}
+  $sql="UPDATE fm_users SET first_name='$_POST['firstname']', last_name='$_POST['lastname']', title='$_POST['title']', description='$_POST['description']';
+
+    } //closes IF statement
+  } //closes WHILE loop
+} //closes POST condition
 
 ?>
 
@@ -110,7 +112,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																	<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" placeholder="First Name">
+																	<input type="text" name="firstname" class="form-control" placeholder="First Name">
 																</div>
 														</div>
 
@@ -120,7 +122,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																		<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" class="form-control" placeholder="Last Name">
+																	<input type="text" name="lastname" class="form-control" placeholder="Last Name">
 																</div>
 														</div>
 
@@ -131,11 +133,11 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 													<span class="input-group-addon">
 														<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input type="text" class="form-control" placeholder="Title">
+													<input type="text" name="title" class="form-control" placeholder="Title">
 												</div>
 
 												<label>Description</label>
-												<textarea class="form-control" rows="4" placeholder="Describe yourself for everyone!"></textarea>
+												<textarea class="form-control" rows="4" name="description" placeholder="Describe yourself for everyone!"></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto text-center">
 																<button class="btn btn-danger btn-lg btn-fill">Update</button>
