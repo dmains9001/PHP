@@ -1,8 +1,8 @@
 <?php
-//If no session is open, start.
-//Add name attributes to form elements
-//Set default values for each form element from $_SESSION
-//Update submitted values to database
+//If no session is open, start. *
+//Add name attributes to form elements *
+//Set default values for each form element from $_SESSION *
+//Update submitted values to database *
 //Update submitted values to $_SESSION
 ?>
 
@@ -11,30 +11,22 @@ session_start();
 require('dbconnection.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $email = $_POST['email'];
-  $password = $_POST['password'];
+  $email = $_SESSION['email'];
   $firstname = $_POST['firstname'];
   $lastname = $_POST['lastname'];
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-	$sql = "SELECT email, password, first_name, last_name, title, description FROM fm_users where email = '$email'";
+  $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
+  $conn->query($sql);
 
-	  $result = $conn->query($sql);
+  if ($conn->true) {
+    $_POST['firstname'] = $_SESSION['firstname'];
+    $_POST['lastname'] = $_SESSION['lastname'];
+    $_POST['title'] = $_SESSION['title'];
+    $_POST['description'] = $_SESSION['description'];
+  }
 
-	while ($row = $result->fetch_assoc()) {
-if ($email == $row['email'] && password_verify($password, $row['password']) ) {
-			$_SESSION['email'] = $email;
-			$_SESSION['image_url'] = $row['image_url'];
-			$_SESSION['first_name'] = $row['first_name'];
-			$_SESSION['last_name'] = $row['last_name'];
-			$_SESSION['title'] = $row['title'];
-			$_SESSION['description'] = $row['description'];
-
-     $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
-       $conn->query($sql);
-   } //closes IF statement
- } //closes WHILE loop
 } //closes POST condition
 
 ?>
@@ -116,7 +108,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																	<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" name="firstname" class="form-control" placeholder="First Name">
+																	<input value="<?php echo $_SESSION['first_name']; ?> " type="text" name="firstname" class="form-control" placeholder="First Name">
 																</div>
 														</div>
 
@@ -126,7 +118,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 																	<span class="input-group-addon">
 																		<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" name="lastname" class="form-control" placeholder="Last Name">
+																	<input value="<?php echo $_SESSION['last_name']; ?> " type="text" name="lastname" class="form-control" placeholder="Last Name">
 																</div>
 														</div>
 
@@ -137,11 +129,11 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 													<span class="input-group-addon">
 														<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input type="text" name="title" class="form-control" placeholder="Title">
+													<input value="<?php echo $_SESSION['title']; ?> " type="text" name="title" class="form-control" placeholder="Title">
 												</div>
 
 												<label>Description</label>
-												<textarea class="form-control" rows="4" name="description" placeholder="Describe yourself for everyone!"></textarea>
+												<textarea class="form-control" rows="4" input value="<?php echo $_SESSION['description']; ?> " name="description" placeholder="Describe yourself for everyone!"></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto text-center">
 																<button class="btn btn-danger btn-lg btn-fill">Update</button>
