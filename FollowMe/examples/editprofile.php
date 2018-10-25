@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 																	<span class="input-group-addon">
 																		<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input type="text" value="<?php echo $_SESSION['last_name'];?>"  name="lastname" class="form-control" placeholder="Last Name">
+																	<input value="<?php echo $_SESSION['last_name'];?>" type="text" name="lastname" class="form-control" placeholder="Last Name">
 																</div>
 														</div>
 
@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 													<span class="input-group-addon">
 														<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input type="text" value="<?php echo $_SESSION['title'];?>"  name="title" class="form-control" placeholder="Title">
+													<input value="<?php echo $_SESSION['title'];?>" type="text"  name="title" class="form-control" placeholder="Title">
 												</div>
 
 												<label>Description</label>
