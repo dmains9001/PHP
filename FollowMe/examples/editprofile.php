@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 										<h2 class="text-center">Edit Your Profile</h2>
 										<form class="contact-form" action="" method="post">
 
-												<div class="row">
+											<!--	<div class="row"> -->
 
 														<div class="col-md-6">
 																<label>First Name</label>
