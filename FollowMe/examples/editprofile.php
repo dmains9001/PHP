@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $_POST['title'] = $_SESSION['title'];
     $_POST['description'] = $_SESSION['description'];
 
-  } //closes sql query
+  } //closes sql query IF statement
 } //closes POST condition
 
 ?>
