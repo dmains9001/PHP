@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $conn->query($sql);
 
   if ($conn->query($sql) === TRUE) {
-    $_SESSION['firstname'] = $_POST['firstname'];
+    $_POST['firstname']; = $_SESSION['firstname'];
     $_POST['lastname'] = $_SESSION['lastname'];
     $_POST['title'] = $_SESSION['title'];
     $_POST['description'] = $_SESSION['description'];
