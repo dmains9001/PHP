@@ -31,7 +31,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
 
-     $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',)";
+     $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
        $conn->query($sql);
    } //closes IF statement
  } //closes WHILE loop
