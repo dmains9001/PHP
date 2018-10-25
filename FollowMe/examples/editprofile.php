@@ -115,7 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 																	<span class="input-group-addon">
 																	<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input value="<?php echo $_SESSION['first_name']; ?> " type="text" name="firstname" class="form-control" placeholder="<?php echo $_SESSION['first_name']; ?> ">
+																	<input value="<?php echo $_SESSION['first_name'];?> " type="text" name="firstname" class="form-control" placeholder="First Name">
 																</div>
 														</div>
 
@@ -125,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 																	<span class="input-group-addon">
 																		<i class="nc-icon nc-single-02"></i>
 																	</span>
-																	<input value="<?php echo $_SESSION['last_name']; ?> " type="text" name="lastname" class="form-control" placeholder="Last Name">
+																	<input value="<?php echo $_SESSION['last_name'];?> " type="text" name="lastname" class="form-control" placeholder="Last Name">
 																</div>
 														</div>
 
@@ -136,11 +136,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 													<span class="input-group-addon">
 														<i class="nc-icon nc-tag-content"></i>
 													</span>
-													<input value="<?php echo $_SESSION['title']; ?> " type="text" name="title" class="form-control" placeholder="Title">
+													<input value="<?php echo $_SESSION['title'];?> " type="text" name="title" class="form-control" placeholder="Title">
 												</div>
 
 												<label>Description</label>
-												<textarea class="form-control" rows="4" input value="<?php echo $_SESSION['description']; ?> " name="description" placeholder="Describe yourself for everyone!"></textarea>
+												<textarea class="form-control" rows="4" input value="<?php echo $_SESSION['description'];?> " name="description" placeholder="Describe yourself for everyone!"></textarea>
 												<div class="row">
 														<div class="col-md-4 ml-auto mr-auto text-center">
 																<button class="btn btn-danger btn-lg btn-fill" type="submit">Update</button>
