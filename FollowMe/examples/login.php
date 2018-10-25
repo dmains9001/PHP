@@ -143,7 +143,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 
 <?php
 
-
+echo "Logged in as: " . $_SESSION['email'];
 
 ?>
 
