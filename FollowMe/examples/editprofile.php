@@ -26,8 +26,6 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 			$_SESSION['last_name'] = $row['last_name'];
 			$_SESSION['title'] = $row['title'];
 			$_SESSION['description'] = $row['description'];
-    } //closes IF statement
-  } //closes WHILE loop
 
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
@@ -36,6 +34,8 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
 
    $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',)";
      $conn->query($sql);
+   } //closes IF statement
+ } //closes WHILE loop
 } //closes POST condition
 
 ?>
