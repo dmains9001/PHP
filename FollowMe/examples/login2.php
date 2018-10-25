@@ -14,8 +14,8 @@ $sql = "SELECT email, password FROM fm_users where email = '$email'";
 
   //Extraction the returned query information
   while ($row = $result->fetch_assoc()) {
-if ($username == $row['username'] && password_verify($password, $row['password']) ) {
-      $_SESSION['username'] = $username;
+if ($email == $row['email'] && password_verify($password, $row['password']) ) {
+      $_SESSION['email'] = $email;
     } //closes if statement
   } //closes while loop
 } //closes POST condition
