@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-  $sql = "UPDATE fm_users SET (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
+  $sql = "UPDATE fm_users SET (first_name = '$firstname',last_name = '$lastname', title = '$title', description = '$description') where email = '$email'";
   $conn->query($sql);
 
   if ($conn) {
