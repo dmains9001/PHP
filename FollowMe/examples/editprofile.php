@@ -34,11 +34,11 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
     $title = $_POST['title'];
     $description = $_POST['description'];
 
-  $sql="UPDATE fm_users SET first_name='$_POST['firstname']',
-    last_name='$_POST['lastname']',
-    title='$_POST['title']',
-    description='$_POST['description']'";
-        $conn->query($sql)
+//  $sql="UPDATE fm_users SET first_name='$_POST['firstname']',
+//    last_name='$_POST['lastname']',
+//    title='$_POST['title']',
+//    description='$_POST['description']'";
+//        $conn->query($sql)
 } //closes POST condition
 
 ?>
