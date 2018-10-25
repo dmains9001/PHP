@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 // } else {
 //     echo "Error updating record: " . mysqli_error($conn);
 // }
-$conn->query($sql)
+
+  $conn->query($sql);
   if ($conn) {
     $_SESSION['firstname'] = $_POST['firstname'];
     $_SESSION['lastname'] = $_POST['lastname'];
