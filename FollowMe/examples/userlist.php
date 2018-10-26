@@ -16,6 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 } //closes POST condition
 
+//Create the SQL query
+$sql = "SELECT first_name, last_name, title from fm_users";
+
+//Execute the SQL query
+$result = $conn->query($sql);
+
 ?>
 
 <!doctype html>
