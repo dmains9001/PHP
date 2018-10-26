@@ -13,29 +13,7 @@ session_start();
 require('dbconnection.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $email = $_SESSION['email'];
-  $firstname = $_POST['firstname'];
-  $lastname = $_POST['lastname'];
-  $title = $_POST['title'];
-  $description = $_POST['description'];
 
-  $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' where email = '$email'";
-
-//  Code for testing purposes
-//   if (mysqli_query($conn, $sql)) {
-//     echo "Record updated successfully";
-// } else {
-//     echo "Error updating record: " . mysqli_error($conn);
-// }
-
-  $conn->query($sql);
-  if ($conn) {
-    $_SESSION['firstname'] = $_POST['firstname'];
-    $_SESSION['lastname'] = $_POST['lastname'];
-    $_SESSION['title'] = $_POST['title'];
-    $_SESSION['description'] = $_POST['description'];
-
-  } //closes sql query IF statement
 } //closes POST condition
 
 ?>
