@@ -1,9 +1,11 @@
 <?php
-//If no session is open, start. *
-//Add name attributes to form elements *
-//Set default values for each form element from $_SESSION *
-//Update submitted values to database *
-//Update submitted values to $_SESSION
+//Get array and of users from database
+//<li> needs to be in loop of database records
+//Replace "Flume" with first / last names
+//Replace "musical producer" with title
+//img src should be changed to profile url
+//checkboxes should be unchecked
+
 ?>
 
 <?php
@@ -17,16 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $title = $_POST['title'];
   $description = $_POST['description'];
 
-  $sql= "UPDATE fm_users (first_name,last_name,title,description) VALUES ('$firstname','$lastname','$title','$description',) where email = '$email'";
+  $sql = "UPDATE fm_users SET first_name = '$firstname', last_name = '$lastname', title = '$title', description = '$description' where email = '$email'";
+
+//  Code for testing purposes
+//   if (mysqli_query($conn, $sql)) {
+//     echo "Record updated successfully";
+// } else {
+//     echo "Error updating record: " . mysqli_error($conn);
+// }
+
   $conn->query($sql);
-
-  if ($conn->query($sql) === TRUE) {
+  if ($conn) {
     $_SESSION['firstname'] = $_POST['firstname'];
-    $_POST['lastname'] = $_SESSION['lastname'];
-    $_POST['title'] = $_SESSION['title'];
-    $_POST['description'] = $_SESSION['description'];
+    $_SESSION['lastname'] = $_POST['lastname'];
+    $_SESSION['title'] = $_POST['title'];
+    $_SESSION['description'] = $_POST['description'];
 
-  } //closes sql query
+  } //closes sql query IF statement
 } //closes POST condition
 
 ?>
@@ -39,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>Follow Me: Edit Profile - By Damian</title>
+	<title>Follow Me: User List - By Damian</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -129,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
                               <div class="col-md-3 col-sm-2">
           <div class="form-check">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" value="">
+                                <input class="form-check-input" type="checkbox" value="" checked>
                                 <span class="form-check-sign"></span>
                             </label>
                         </div>
