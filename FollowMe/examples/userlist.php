@@ -12,12 +12,11 @@
 session_start();
 require('dbconnection.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+//if ($_SERVER['REQUEST_METHOD'] == 'POST') {} (Just in case POST is needed)
 
-} //closes POST condition
 
 //Create the SQL query
-$sql = "SELECT first_name, last_name, title from fm_users";
+$sql = "SELECT first_name, last_name, title from fm_users ORDER BY last_name";
 
 //Execute the SQL query
 $result = $conn->query($sql);
