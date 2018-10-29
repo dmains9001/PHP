@@ -96,7 +96,7 @@ $result = $conn->query($sql);
                         while ($row = $result->fetch_assoc()) {
                           $first_name = $row['first_name'];
                           $last_name = $row['last_name'];
-                          $image_url = $row['img_url'];
+                          $image_url = $row['image_url'];
                           $title = $row['title'];
 
 										echo "<li>
