@@ -12,7 +12,7 @@ session_start();
 require('dbconnection.php');
 
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
-$sql = "SELECT email, password FROM fm_users where email = '$email'";
+$sql = "SELECT * FROM fm_users where email = '$email'";
 
   //Execute the SQL and return array to $result
   $result = $conn->query($sql);
