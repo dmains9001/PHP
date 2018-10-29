@@ -11,10 +11,6 @@
 session_start();
 require('dbconnection.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
 $sql = "SELECT email, password FROM fm_users where email = '$email'";
 
