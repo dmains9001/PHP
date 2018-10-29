@@ -94,7 +94,7 @@ $sql = "SELECT email, password FROM fm_users where email = '$email'";
                         <img src="<?php echo $_SESSION['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title"> <?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?> ]<br /></h4>
+                        <h4 class="title"> <?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?> ]<br /></h4>
 						<h6 class="description"> <?php echo $SESSION['title']; ?> </h6>
                     </div>
                 </div>
