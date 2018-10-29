@@ -111,7 +111,7 @@ $result = $conn->query($sql);
                           <div class=\"col-md-3 col-sm-2\">
           									<div class=\"form-check\">
                           	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\" unchecked>
+                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\">
                           		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
