@@ -103,7 +103,7 @@ $result = $conn->query($sql);
                       <li>
                           <div class="row">
                               <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                  <img src="<?php echo $image_url ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                  <img src="<?php echo $image_url ?>;" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                               </div>
                               <div class="col-md-7 col-sm-4  ml-auto mr-auto">
                                   <h6>Flume<br/><small>Musical Producer</small></h6>
