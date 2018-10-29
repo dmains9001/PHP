@@ -105,7 +105,7 @@ $result = $conn->query($sql);
 													<img src=\"$image_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
 												</div>
 													<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
-												  	<p>$first_name $last_name<br/><small>$title</small></p>
+												  	<p> $first_name $last_name <br/> <small> $title </small> </p>
    									 			</div>
 
                           <div class=\"col-md-3 col-sm-2\">
