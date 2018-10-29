@@ -97,10 +97,10 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
                     <div class="avatar">
                         <img src="<?php echo $_SESSION['image_url']; ?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
-                    <div class="name">
+                      <div class="name">
                         <h4 class="title"> <?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?> <br /></h4>
-						<h6 class="description"> <?php echo $SESSION['title']; ?> </h6>
-                    </div>
+						              <h6 class="description"> <?php echo $SESSION['title']; ?> </h6>
+                      </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
