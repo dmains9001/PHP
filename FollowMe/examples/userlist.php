@@ -93,12 +93,14 @@ $result = $conn->query($sql);
                   <ul class="list-unstyled follows">
 
 										<?php
+										//While loop to gather the info from SQL
                         while ($row = $result->fetch_assoc()) {
                           $first_name = $row['first_name'];
                           $last_name = $row['last_name'];
                           $image_url = $row['image_url'];
                           $title = $row['title'];
 
+										//Starts the list
 										echo "<li>
 											<div class=\"row\">
 												<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
