@@ -1,10 +1,10 @@
 <?php
-//Get array and of users from database
-//<li> needs to be in loop of database records
-//Replace "Flume" with first / last names
-//Replace "musical producer" with title
-//img src should be changed to profile url
-//checkboxes should be unchecked
+// Comments go here
+
+//$_SESSION['userid']
+//sql select follower_id from fm_follows
+//Set another sql $result variable; so, $result2 (which is not an array)
+//Set result2
 
 ?>
 
@@ -20,6 +20,18 @@ $sql = "SELECT * from fm_users ORDER BY last_name";
 
 //Execute the SQL query
 $result = $conn->query($sql);
+
+//From login page, needed for SQL query
+$userid = $_SESSION['userid'];
+
+
+$sql = "SELECT follower_id from fm_follows WHERE user_id = '$userid'";
+
+$following_result = $conn->query($sql);
+
+while($row = $following_result->fetch_row()) {
+	$following_user_ids[]=$row;
+}
 
 ?>
 
