@@ -25,12 +25,12 @@ $result = $conn->query($sql);
 $userid = $_SESSION['userid'];
 
 
-$sql = "SELECT follower_id from fm_follows WHERE user_id = '$userid'";
+$sql = "SELECT follower_id from fm_follows WHERE userid = '$userid'";
 
 $following_result = $conn->query($sql);
 
 while($row = $following_result->fetch_row()) {
-	$following_user_ids[]=$row;
+	$following_user_ids[]=$row(0);
 }
 
 ?>
