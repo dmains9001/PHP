@@ -141,7 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 												<label>Description</label>
 												<textarea class="form-control" rows="4" input value="<?php echo $_SESSION['description'];?>" name="description" placeholder="Describe yourself for everyone!"></textarea>
-												<div class="row">
+												<div class="input-group">
 														<div class="col-md-4 ml-auto mr-auto text-center">
 																<button class="btn btn-danger btn-lg btn-fill" type="submit">Update</button>
 														</div>
