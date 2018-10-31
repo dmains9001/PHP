@@ -6,6 +6,8 @@
 //Set another sql $result variable; so, $result2 (which is not an array)
 //Set result2
 
+// Look at list of who you're following - Loop, fetchrow, -
+
 ?>
 
 <?php
@@ -25,12 +27,12 @@ $result = $conn->query($sql);
 $userid = $_SESSION['userid'];
 
 
-$sql = "SELECT follower_id from fm_follows WHERE userid = '$userid'";
+$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = '$userid'";
 
 $following_result = $conn->query($sql);
 
-while($row = $following_result->fetch_row()) {
-	$following_id[]=$row(0);
+while($row = $following_result->fetch_assoc()) {
+	$following_id[]=$row["followed_user"];
 }
 
 ?>
@@ -125,7 +127,7 @@ while($row = $following_result->fetch_row()) {
                           <div class=\"col-md-3 col-sm-2\">
           									<div class=\"form-check\">
                           	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\">
+                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\"  checked>
                           		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
@@ -133,6 +135,11 @@ while($row = $following_result->fetch_row()) {
                     </div>
                 	</li>";
 										}
+
+										//if (in_array($row['user_id'], $following_id)){echo "checked";}
+										//Link the fm_follows columns (followed_by and followed_user) to fm_users as foreign keys, so
+										//they're linked to userid in fm_users, so it auto-populates the fm_follows tables with the
+										//userid values.
 									?>
 
                   </ul>
