@@ -34,12 +34,6 @@ $following_result = $conn->query($sql);
 while($row = $following_result->fetch_assoc()) {
 	$following_id[]=$row["followed_user"];
 
-	$checked =
-	 if (in_array($row['user_id'] = $following_id){
-		 echo "checked";
-	 } else {
-		 echo "";
-	 }
 }
 
 ?>
@@ -122,6 +116,11 @@ while($row = $following_result->fetch_assoc()) {
                           $title = $row['title'];
 
 
+													 if (in_array($row['user_id'] = $following_id){
+														$checked = echo "checked";
+													 } else {
+														$checked = echo "";
+													 }
 
 
 										//Starts the list
