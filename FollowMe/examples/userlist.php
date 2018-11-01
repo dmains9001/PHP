@@ -115,12 +115,12 @@ while($row = $following_result->fetch_assoc()) {
                           $title = $row['title'];
 
 
-													$checked =
-													if (in_array($row['user_id'] = $following_id){
-														echo "checked";
-													} else {
-														echo "";
-													}
+												// $checked =
+												//	if (in_array($row['user_id'] = $following_id){
+												//		echo "checked";
+												//	} else {
+												//		echo "";
+												//	}
 
 										//Starts the list
 										echo "<li>
@@ -135,7 +135,7 @@ while($row = $following_result->fetch_assoc()) {
                           <div class=\"col-md-3 col-sm-2\">
           									<div class=\"form-check\">
                           	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" $checked>
+                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" >
                           		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
