@@ -127,7 +127,7 @@ while($row = $following_result->fetch_assoc()) {
                           <div class=\"col-md-3 col-sm-2\">
           									<div class=\"form-check\">
                           	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value = (in_array($row['user_id'], $following_id) ? 'echo \"checked\"' : 'echo \"unchecked\"';>
+                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" (in_array($row['user_id'], $following_id) ? 'echo \"checked\"' : 'echo \"unchecked\"';>
                           		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
