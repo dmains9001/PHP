@@ -116,7 +116,7 @@ while($row = $following_result->fetch_assoc()) {
 
 
 													$checked =
-													if (in_array($row['user_id'] == $following_id){
+													if (in_array($row['user_id'] = $following_id){
 														echo "checked";
 													} else {
 														echo "unchecked";
