@@ -142,8 +142,8 @@ while($row = $following_result->fetch_assoc()) {
                       </div>
                     </div>
                 	</li>"
-									
-										}
+								;
+							}
 
 										//" . (in_array($row['user_id'], $following_id) ? echo "checked" : echo ""; . "
 										//if (in_array($row['user_id'], $following_id)){echo "checked";}
