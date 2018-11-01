@@ -127,7 +127,7 @@ while($row = $following_result->fetch_assoc()) {
                           <div class=\"col-md-3 col-sm-2\">
           									<div class=\"form-check\">
                           	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\"  checked>
+                          		<input class=\"form-check-input\" type=\"checkbox\" value=\"\"  if (in_array($row['user_id'], $following_id)){echo \"checked\";}>
                           		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
@@ -135,8 +135,7 @@ while($row = $following_result->fetch_assoc()) {
                     </div>
                 	</li>";
 										}
-
-										//if (in_array($row['user_id'], $following_id)){echo "checked";}
+										
 										//Link the fm_follows columns (followed_by and followed_user) to fm_users as foreign keys, so
 										//they're linked to userid in fm_users, so it auto-populates the fm_follows tables with the
 										//userid values.
