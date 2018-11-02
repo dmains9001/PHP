@@ -116,11 +116,11 @@ while($row = $following_result->fetch_assoc()) {
                           $title = $row['title'];
 
 
-													 if (in_array($row['userid'] = $following_id){
-														$checked = echo "checked";
-													 } else {
-														$checked = echo "";
-													 }
+												//	 if (in_array($row['userid'] = $following_id){
+												//		$checked = echo "checked";
+		//BREAKS CODE	    	//	 } else {
+												//		$checked = echo "";
+												//	 }
 
 
 										//Starts the list
