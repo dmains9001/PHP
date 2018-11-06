@@ -6,6 +6,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   $email = $_POST['email'];
   $password = $_POST['password'];
 
+  if (!isset($_SESSION['username'])){
+    header('Location: profile.php');
+  }
+
 
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
 $sql = "SELECT * FROM fm_users where email = '$email'";
