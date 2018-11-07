@@ -2,7 +2,7 @@
 // Comments go here
 
 //$_SESSION['userid']
-//sql select follower_id from fm_follows
+//sql select followed_by from fm_follows
 //Set another sql $result variable; so, $result2 (which is not an array)
 //Set result2
 
@@ -116,7 +116,7 @@ while($row = $following_result->fetch_assoc()) {
                           $title = $row['title'];
 
 
-												//	 if (in_array($row['userid'] = $followed_by){
+												//	 if (in_array($row['userid'] = $followed_user){
 												//		$checked = echo "checked";
 		//BREAKS CODE	    	//	 } else {
 												//		$checked = echo "";
