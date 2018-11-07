@@ -116,7 +116,7 @@ while($row = $following_result->fetch_assoc()) {
                           $title = $row['title'];
 
 
-												//	 if (in_array($row['userid'] = $following_id){
+												//	 if (in_array($row['userid'] = $followed_by){
 												//		$checked = echo "checked";
 		//BREAKS CODE	    	//	 } else {
 												//		$checked = echo "";
