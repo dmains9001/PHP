@@ -1,20 +1,15 @@
 <?php
 // Comments go here
 
-//$_SESSION['userid']
-//sql select followed_by from fm_follows
-//Set another sql $result variable; so, $result2 (which is not an array)
-//Set result2
-
-// Look at list of who you're following - Loop, fetchrow, -
-
 ?>
 
 <?php
-session_start();
+if (!isset($_SESSION)) {
+  session_start();
+}
 require('dbconnection.php');
 
-//if ($_SERVER['REQUEST_METHOD'] == 'POST') {} (Just in case POST is needed)
+//if ($_SERVER['REQUEST_METHOD'] === 'POST') {} (Just in case POST is needed)
 
 
 //Create the SQL query
@@ -32,7 +27,7 @@ $follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = '$userid
 $following_result = $conn->query($sql);
 
 while($row = $following_result->fetch_assoc()) {
-	$following_id[]=$row["followed_user"];
+	$following_id[]=$row[0];
 
 }
 
