@@ -23,6 +23,7 @@ if ($email == $row['email'] && password_verify($password, $row['password']) ) {
       $_SESSION['last_name'] = $row['last_name'];
       $_SESSION['title'] = $row['title'];
       $_SESSION['description'] = $row['description'];
+      $_SESSION['userid'] = $row['userid'];
 
     } //closes if statement
   } //closes while loop

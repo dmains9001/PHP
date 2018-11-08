@@ -13,7 +13,7 @@ require('dbconnection.php');
 
 
 //Create the SQL query
-$sql = "SELECT * from fm_users ORDER BY last_name";
+$sql = "SELECT * from fm_users";
 
 //Execute the SQL query
 $result = $conn->query($sql);
@@ -22,11 +22,11 @@ $result = $conn->query($sql);
 $userid = $_SESSION['userid'];
 
 
-$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = '$userid'";
+$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = $userid";
 
 $following_result = $conn->query($sql);
 
-while($row = $following_result->fetch_assoc()) {
+while($row = $following_result->fetch_row()) {
 	$following_id[]=$row[0];
 
 }
