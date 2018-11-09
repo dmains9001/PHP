@@ -11,6 +11,10 @@
 session_start();
 require('dbconnection.php');
 
+if (!isset($_SESSION['email'])){
+   header('location: login.php');
+ }
+
   //SQL statement to execute. SURROUND VARIABLES WITH SINGLE QUOTES
 $sql = "SELECT * FROM fm_users where email = '$email'";
 
