@@ -136,61 +136,40 @@ while($row = $following_result->fetch_row()) {
 
 										<?php
 										//While loop to gather the info from SQL
-                        while ($row = $result->fetch_assoc()) {
-                          $first_name = $row['first_name'];
-                          $last_name = $row['last_name'];
-                          $image_url = $row['image_url'];
-                          $title = $row['title'];
+                        while ($row = $result->fetch_assoc()) { ?>
 
-
-												//	 if (in_array($row['userid'] = $followed_user){
-												//		$checked = echo "checked";
-		//BREAKS CODE	    	//	 } else {
-												//		$checked = echo "";
-												//	 }
-
-
-										//Starts the list
-										echo "<li>
-											<div class=\"row\">
-												<div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
-													<img src=\"$image_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
+										<li>
+											<div class="row">
+												<div class="col-md-2 col-sm-2 ml-auto mr-auto">
+													<img src="<?php echo $row['$image_url'] ; ?> alt="Circle Image" class="img-circle img-no-padding img-responsive">
 												</div>
-													<div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
-												  	<p> $first_name $last_name <br/> <small> $title </small> </p>
+													<div class="col-md-7 col-sm-4  ml-auto mr-auto">
+												  	<p> <?php echo $row['first_name'] . $row['last_name'] ; ?>
+                              <br/> <small> <?php echo $row['title'] ; ?> </small> </p>
    									 			</div>
 
-                          <div class=\"col-md-3 col-sm-2\">
-          									<div class=\"form-check\">
-                          	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" >
-                          		<span class=\"form-check-sign\"></span>
+                          <div class="col-md-3 col-sm-2">
+                          	<label class="form-check-label">
+                          		<input class="form-check-input" type="checkbox"
+                              name="<?php echo $row['user_id'];?>" value="yes" <?php if (in_array($row['user_id'], $followed_user)){echo "checked";}?> >
+                          		<span class="form-check-sign"></span>
                           	</label>
                         </div>
                       </div>
                     </div>
-                	</li>"
-								;
-							}
-
-										//" . (in_array($row['user_id'], $following_id) ? echo "checked" : echo ""; . "
-										//if (in_array($row['user_id'], $following_id)){echo "checked";}
-										//Link the fm_follows columns (followed_by and followed_user) to fm_users as foreign keys, so
-										//they're linked to userid in fm_users, so it auto-populates the fm_follows tables with the
-										//userid values.
-									?>
-
-                  </ul>
-              </div>
+                	</li>
+                <hr />
+              <?php } ?>
+            </ul>
           </div>
-      </div>
-      <div class="tab-pane text-center" id="following" role="tabpanel">
-          <h3 class="text-muted">Not following anyone yet :(</h3>
-          <button class="btn btn-warning btn-round">Find artists</button>
-      </div>
+        </div>
+
+              <div class="row">
+                  <div class="col-md-4 ml-auto mr-auto text-center">
+                      <button class="btn btn-danger btn-lg btn-fill">Submit</button>
   </div>
   </div>
-  </div>
+</form>
   </div>
 
 	<footer class="footer section-dark">
