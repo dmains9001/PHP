@@ -17,21 +17,49 @@ if (!isset($_SESSION['email'])){
 
 
 //Create the SQL query
-$sql = "SELECT * from fm_users";
+$sql2 = "SELECT * from fm_users";
 
 //Execute the SQL query
-$result = $conn->query($sql);
+$result2 = $conn->query($sql2);
 
 //From login page, needed for SQL query
-$userid = $_SESSION['userid'];
+$user_id = $_SESSION['user_id'];
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = $userid";
+  while ($row2 = $result2->fetch_assoc()) {
+
+    $userID = $row2['user_id'];
+
+    if ($_POST["$userID"] == "yes") {
+
+      $followID = $row2['user_id'];
+      $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$user_id', '$followID')";
+      $conn->query($sql2);
+
+    }
+    else {
+
+      $followID = $row2['$user_id'];
+      $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$user_id' AND followed_user = '$followID'";
+      $conn->query($sql2);
+    } //Else loop
+
+  } //While loop
+
+} //POST
+
+$sql = "SELECT * from fm_users;"
+//execute SQL
+$result = $conn->query($sql);
+
+$sql = "SELECT followed_user from fm_follows WHERE followed_by = $user_id";
 
 $following_result = $conn->query($sql);
 
 while($row = $following_result->fetch_row()) {
-	$following_id[]=$row[0];
+
+	$followed_user[]=$row[0];
 
 }
 
