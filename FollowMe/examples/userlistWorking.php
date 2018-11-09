@@ -13,9 +13,6 @@ if (!isset($_SESSION['email'])){
    header('location: login.php');
  }
 
-//if ($_SERVER['REQUEST_METHOD'] === 'POST') {} (Just in case POST is needed)
-
-
 //Create the SQL query
 $sql2 = "SELECT * from fm_users";
 
@@ -23,24 +20,24 @@ $sql2 = "SELECT * from fm_users";
 $result2 = $conn->query($sql2);
 
 //From login page, needed for SQL query
-$user_id = $_SESSION['user_id'];
+$user_id = $_SESSION['userid'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   while ($row2 = $result2->fetch_assoc()) {
 
-    $userID = $row2['user_id'];
+    $userID = $row2['userid'];
 
     if ($_POST["$userID"] == "yes") {
 
-      $followID = $row2['user_id'];
+      $followID = $row2['userid'];
       $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$user_id', '$followID')";
       $conn->query($sql2);
 
     }
     else {
 
-      $followID = $row2['$user_id'];
+      $followID = $row2['$userid'];
       $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$user_id' AND followed_user = '$followID'";
       $conn->query($sql2);
     } //Else loop
