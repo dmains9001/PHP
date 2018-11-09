@@ -9,6 +9,10 @@ if (!isset($_SESSION)) {
 }
 require('dbconnection.php');
 
+if (!isset($_SESSION['email'])){
+   header('location: login.php');
+ }
+
 //if ($_SERVER['REQUEST_METHOD'] === 'POST') {} (Just in case POST is needed)
 
 
