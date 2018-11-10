@@ -14,8 +14,9 @@
 session_start();
 require('dbconnection.php');
 
-//if ($_SERVER['REQUEST_METHOD'] == 'POST') {} (Just in case POST is needed)
-
+if (!isset($_SESSION['email'])){
+   header('location: login.php');
+ }
 
 //Create the SQL query
 $sql = "SELECT * from fm_users ORDER BY last_name";
