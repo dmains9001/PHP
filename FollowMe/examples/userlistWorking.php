@@ -148,7 +148,7 @@ while($row = $following_result->fetch_row()) {
                           <div class="col-md-3 col-sm-2">
                           	<label class="form-check-label">
                           		<input class="form-check-input" type="checkbox"
-                              name="<?php echo $row['user_id'];?>" value="yes" <?php if (in_array($row['userid'], $followed_user)){echo "checked";}?> >
+                              name="<?php echo $row['userid'];?>" value="yes" <?php if (in_array($row['userid'], $followed_user)){echo "checked";}?> >
                           		<span class="form-check-sign"></span>
                           	</label>
                         </div>
