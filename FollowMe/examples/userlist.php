@@ -1,22 +1,24 @@
 <?php
 // Comments go here
 
+//$_SESSION['userid']
+//sql select follower_id from fm_follows
+//Set another sql $result variable; so, $result2 (which is not an array)
+//Set result2
+
+// Look at list of who you're following - Loop, fetchrow, -
+
 ?>
 
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
+session_start();
 require('dbconnection.php');
-if (!isset($_SESSION['email'])){
-   header('location: login.php');
- }
 
-//if ($_SERVER['REQUEST_METHOD'] === 'POST') {} (Just in case POST is needed)
+//if ($_SERVER['REQUEST_METHOD'] == 'POST') {} (Just in case POST is needed)
 
 
 //Create the SQL query
-$sql = "SELECT * from fm_users";
+$sql = "SELECT * from fm_users ORDER BY last_name";
 
 //Execute the SQL query
 $result = $conn->query($sql);
@@ -25,12 +27,12 @@ $result = $conn->query($sql);
 $userid = $_SESSION['userid'];
 
 
-$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = $userid";
+$follow_sql = "SELECT followed_user from fm_follows WHERE followed_by = '$userid'";
 
 $following_result = $conn->query($sql);
 
-while($row = $following_result->fetch_row()) {
-	$following_id[]=$row[0];
+while($row = $following_result->fetch_assoc()) {
+	$following_id[]=$row["followed_user"];
 
 }
 
@@ -114,7 +116,7 @@ while($row = $following_result->fetch_row()) {
                           $title = $row['title'];
 
 
-												//	 if (in_array($row['userid'] = $followed_user){
+												//	 if (in_array($row['userid'] = $following_id){
 												//		$checked = echo "checked";
 		//BREAKS CODE	    	//	 } else {
 												//		$checked = echo "";
@@ -132,10 +134,10 @@ while($row = $following_result->fetch_row()) {
    									 			</div>
 
                           <div class=\"col-md-3 col-sm-2\">
-          									<div class=\"form-check\">
-                          	<label class=\"form-check-label\">
-                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" >
-                          		<span class=\"form-check-sign\"></span>
+		          									<div class=\"form-check\">
+		                          	<label class=\"form-check-label\">
+		                          		<input class=\"form-check-input\" type=\"checkbox\" value = \"\" >
+		                          		<span class=\"form-check-sign\"></span>
                           	</label>
                         </div>
                       </div>
