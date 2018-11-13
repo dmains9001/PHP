@@ -20,7 +20,7 @@ $sql2 = "SELECT * from fm_users";
 $result2 = $conn->query($sql2);
 
 //From login page, needed for SQL query
-$user_id = $_SESSION['userid'];
+$userid = $_SESSION['userid'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -30,15 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($_POST["$userID"] == "yes") {
 
-      $followID = $row2['userID'];
-      $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$userID', '$followID')";
+      $followID = $row2['userid'];
+      $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$userid', '$followID')";
       $conn->query($sql2);
 
     }
     else {
 
-      $followID = $row2['$userID'];
-      $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$userID' AND followed_user = '$followID'";
+      $followID = $row2['$userid'];
+      $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$userid' AND followed_user = '$followID'";
       $conn->query($sql2);
     } //Else loop
 
@@ -148,7 +148,7 @@ while($row = $following_result->fetch_row()) {
                           <div class="col-md-3 col-sm-2">
                           	<label class="form-check-label">
                           		<input class="form-check-input" type="checkbox"
-                              name="<?php echo $row['userid'];?>" value="yes" <?php if (in_array($row['userid'], $followed_user)){echo "checked";}?> >
+                              name="<?php echo $row['userid'] ; ?>" value="yes" <?php if (in_array($row['userid'], $followed_user)){echo "checked";}?> >
                           		<span class="form-check-sign"></span>
                           	</label>
                         </div>
