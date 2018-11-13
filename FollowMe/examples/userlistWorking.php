@@ -31,14 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_POST["$userID"] == "yes") {
 
       $followID = $row2['userid'];
-      $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$userid', '$followID')";
+      $sql2 = "INSERT IGNORE INTO fm_follows(followed_by, followed_user) VALUES ('$userID', '$followID')";
       $conn->query($sql2);
 
     }
     else {
 
       $followID = $row2['$userid'];
-      $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$userid' AND followed_user = '$followID'";
+      $sql2 = "DELETE FROM fm_follows WHERE followed_by = '$userID' AND followed_user = '$followID'";
       $conn->query($sql2);
     } //Else loop
 
