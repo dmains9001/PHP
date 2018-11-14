@@ -50,7 +50,7 @@ $sql = "SELECT * from fm_users;"
 //execute SQL
 $result = $conn->query($sql);
 
-$sql = "SELECT followed_user from fm_follows WHERE followed_by = $userid";
+$sql = "SELECT followed_user FROM fm_follows WHERE followed_by = $userid";
 
 $following_result = $conn->query($sql);
 
